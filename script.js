@@ -27,8 +27,8 @@ function stopGame() {
   gamePlaying = false;
   
   // swap the Start and Stop buttons
-document.getElementById("startBtn").classList.remove("hidden");
-document.getElementById("stopBtn").classList.add("hidden");
+  document.getElementById("startBtn").classList.remove("hidden");
+  document.getElementById("stopBtn").classList.add("hidden");
 }
 
 function lightButton(btn){
@@ -62,20 +62,14 @@ function guess(btn){
   if(!gamePlaying){
     return;
   }
-
-  if(btn == pattern[guessCounter]) {
-    if(guessCounter == progress) {
-      if (progress == pattern.length - 1) {
-        winGame();
-      }
-      else {
-        progress++;
-        playClueSequence();
-      }
-    }
-    else guessCounter++;
+  
+  if(btn != pattern[guessCounter]) loseGame();
+  else if(guessCounter != progress) guessCounter++;
+  else if(progress != pattern.length - 1) {
+    progress++;
+    playClueSequence();
   }
-  else loseGame();
+  else winGame();
 }
 
 function loseGame(){
