@@ -46,7 +46,18 @@ Here's a walkthrough of implemented user stories:
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
 
-   >A challenge that I encountered in creating this project was finding out how to format the logic
+   >A challenge that I encountered in creating this project was figuring out how to format the logic of handling guesses. 
+   I understood how my logic codes and how it aligns with the instructions. I also wanted to shrink the amount of code that I have to write, 
+   as solely following the instructions made it seem to cramp due to the amount of if-else statements. 
+   Instead of asking if something is equal to something, I reverse the if-else statement to ask if something is not equal to something. 
+   This made the code a lot clean-looking, but requires more in depth reading to understand. However, this solution made it so from someone’s perspective, 
+   it may not look that simple. I tried to solve this with simplified explanations to get an overall understanding of the code and reformatted several times to try to make it look appealing. 
+   Another challenge was that I wasn’t too familiar with JavaScript. I had to look up online references to get a better understanding of what array functions 
+   were available and which one was best fit for what I was trying to accomplish. 
+   The last issue I had was coding the mistakes feature. Once I felt it was finished and tested it, I realized that if a mistake was made, it didn’t reset your turn. 
+   It would make the game confusing whether to restart your guess or to continue off on your error. It made sense to restart your turn. 
+   If you made a mistake, you are supposed to try the current turn again and not continue where you left off.
+
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words)
 
