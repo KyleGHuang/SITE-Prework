@@ -11,15 +11,16 @@ var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000; //how long to hold each clue's light/sound
 var rand = Math.random() / 2; //prints a random number from 0.0 to 0.5
-var mistakes = 3;
+var mistakes = 3; //amount of tries you get
 
 function startGame() {
-  //initialize game variables
+  // initialize game variables
   progress = 0;
   gamePlaying = true;
   clueHoldTime = 1000;
   mistakes = 3;
   
+  // create a random pattern
   randPattern();
   
   // swap the Start and Stop buttons
@@ -71,23 +72,22 @@ function guess(btn){
     return;
   }
   
-  //game logic
-  if(btn != pattern[guessCounter]) {
-    
-    //if you made 3 mistakes
-    if(mistakes == 0) loseGame();
+  //////////////
+  //game logic//
+  //////////////
+  
+  if(btn != pattern[guessCounter]) { // if guess is not right
+    if(mistakes == 0) loseGame(); // if you are out of tries, you lose
     else {
       mistakes--;
       guessCounter = 0; //restart turn
-      
       if(mistakes == 1) alert("You have " + mistakes + " more chance.");
       else alert("You have " + mistakes + " chances left.");
     }
-  }
-  
+  } 
   //if you don't make a mistake
-  else if(guessCounter != progress) guessCounter++;
-  else if(progress != pattern.length - 1) {
+  else if(guessCounter != progress) guessCounter++; // if turn is not over, proceed with turn
+  else if(progress != pattern.length - 1) { // if its not the last turn, progress turn and play clue sequence
     progress++;
     playClueSequence();
   }
@@ -105,17 +105,19 @@ function winGame(){
 }
 
 function randPattern() {
-  //if pattern array is not empty, clear it
+  // if a pattern array exists, clear it
   while(pattern[0] != undefined) {
     pattern.pop();
   }
   
-  //fill pattern array with integers 1-5, eight times
+  // fill pattern array with integers 1-5, eight times
   for(let i = 0; i < 8; i++) {
     rand = Math.random() / 2 * 10;
     pattern.push(Math.ceil(rand));
   }
 }
+
+
 
 
 
