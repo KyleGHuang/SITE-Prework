@@ -71,17 +71,21 @@ function guess(btn){
     return;
   }
   
+  //game logic
   if(btn != pattern[guessCounter]) {
     
     //if you made 3 mistakes
     if(mistakes == 0) loseGame();
     else {
       mistakes--;
+      guessCounter = 0; //restart turn
       
       if(mistakes == 1) alert("You have " + mistakes + " more chance.");
       else alert("You have " + mistakes + " chances left.");
     }
   }
+  
+  //if you don't make a mistake
   else if(guessCounter != progress) guessCounter++;
   else if(progress != pattern.length - 1) {
     progress++;
