@@ -36,7 +36,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![](Example.gif)
+![](Walkthrough.gif)
 
 ## Reflection Questions
 
